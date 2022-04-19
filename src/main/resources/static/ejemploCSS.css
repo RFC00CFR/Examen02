@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+.body{
+    padding-top:0%;
+    
+}
+.userName{
+  margin-left: .5rem;
+  margin-right: 1rem;
+}
+h5{
+    font-weight: bolder;
+}
+
+.row{
+    
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    
+}
+
+.content{
+padding-top: 8rem;
+background-image: linear-gradient(to right, rgb(64, 0, 128) , rgb(26, 163, 255));
+padding-bottom: 2rem;
+}
+
+ul li a {
+    font-weight:bold;
+    margin-right: 30px;
+}
+
+ul li a :hover{
+    color: #008198;
+}
+
+.alianzas{
+  font-size: 1.2rem;
+  color: #008198;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: #bfffff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .one {
+    grid-column: 1 / 1;
+    grid-row: 1;
+    margin: auto;
+  }
+  .two {
+    grid-column: 2 / 2;
+    grid-row: 1;
+    margin: auto;
+    opacity: 0.6;
+   
+  }
+  .three {
+    grid-column: 3/3;
+    grid-row: 1;
+    margin: auto;
+    opacity: 0.6;
+  }
+  .four {
+    grid-column: 4/4;
+    grid-row: 1;
+    margin: auto;
+    opacity: 0.6;
+  }
+  .five {
+    grid-column: 5/5;
+    grid-row: 1;
+    margin: auto;
+    opacity: 0.6;
+  }
+  .six {
+    grid-column: 6/6;
+    grid-row: 1;
+    margin: auto;
+    opacity: 0.6;
+  }
+  .socialMedia{
+    margin-right: 40px;
+    opacity: 0.8;
+    
+  }
+  

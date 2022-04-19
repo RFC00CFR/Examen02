@@ -1,0 +1,291 @@
+<!doctype html>
+<html xmlns:th="http://thymeleaf.org">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="ejemploCSS.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Your Sneakers</title>
+  </head>
+  <body>
+
+    <!-- NAV empieza aqui -->
+    <nav class="navbar navbar-fluid fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../sneaker.png" alt="" width="80" class="d-inline-block align-text-top">
+          <h5>Your Sneakers</h5><h5 th:text="#{index.titulo}"></h5>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Preguntas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contactenos</a>
+            </li>
+            
+          </ul>
+            <span class="navbar-text align-middle" >
+                <a class="navbar-brand" th:href="account" sec:authorize="isAuthenticated()">
+                    
+                    <i class="bi bi-cart-plus-fill align-middle" style="font-size: 2.4rem; color: #330066;"></i>
+                    <span sec:authentication="name" class="align-middle">Mi Carrito</span>
+                </a>
+
+            </span>
+            
+            <span th:text="#{lang.change}"></span>
+        <select id="locales">
+            <option value=""></option>
+            <option value="en" th:text="#{lang.eng}">Inglés</option>
+            <option value="fr" th:text="#{lang.es}">Español</option>
+        </select>
+         
+        </div>
+      </div>
+    </nav>
+    <!-- NAV termina aqui -->
+
+    <!-- -------------------------------------------------------------------------------------------Contenido -->
+    <div class="content">
+      <div class="row">
+          <div class="col"></div>
+          
+          <div class="col-4"><br><img src="../sneakers-wall.jpg" alt="" width="300"class="d-inline-block align-text-top"></div>
+          <div class="col-4">
+            <br><br><br>
+            <h1 class="display-3" style="color:whitesmoke; font-weight: bolder">Acerca de</h1>
+            <br>
+            <p style="color:whitesmoke">Sabemos lo que te gusta.</p>
+            <p style="color:whitesmoke">por eso aquí podrás encontrar las tennis para los gustos mas extravagantes</p>
+          </div>
+          <div class="col"></div>
+      </div>
+    
+    </div>
+    
+    
+<!--   ----------------------------------------------------------------------------------------- Carrousel empieza aqui-->
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="../sneaker01.jpg" class="d-block w-100" alt="..." style=" object-fit: contain; height:400px;width: 400px;">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="../sneaker02.jpg" class="d-block w-100" alt="..." style=" object-fit: contain; height:400px;width: 400px;">
+                </div>
+                
+                 <div class="carousel-item" data-bs-interval="4000">
+                    <img src="../sneaker03.jpg" class="d-block w-100" alt="..." style=" object-fit: contain; height:400px;width: 400px;">
+                </div>
+
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+     <div class="content">
+         <div class="row">
+             <div class="col"></div>
+             <div class="col-3">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="../sneaker04.jpg" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Ejercicio</h5>
+                         <p class="card-text">Las mejores tennis para la actividad que desees.</p>
+                         <a href="#" class="btn btn-primary">Saber más</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-3">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="../sneaker05.jpg" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Casual</h5>
+                         <p class="card-text">Para actividades casuales.</p>
+                         <a href="#" class="btn btn-primary">Saber más</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-3">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="../sneaker06.jpg" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Clasicas</h5>
+                         <p class="card-text">Las marcas con las mejores tennis desde hace décadas.</p>
+                         <a href="#" class="btn btn-primary">Saber más</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col"><br><br></div>
+
+             <div class="content">
+                 <div class="row">
+                     <div class="col-2"></div>
+
+                     <div class="col-8">
+                         <div class="hero-unit">
+                             <h1 class="display-3" style="color:whitesmoke; font-weight: bolder">Sorpresas</h1>
+                             <p style="color:whitesmoke; font-weight: bolder">Tendremos giras por todo el país con grandes sorpresas</p>
+                             <p>
+                                <button type="button" class="btn btn-light">Saber mas</button>
+                             </p>
+                         </div>
+                     </div>
+                     
+                     <div class="col-2"></div>
+                 </div>
+
+             </div>
+    
+    </div>
+    
+
+    <!-- Contenido temina aqui -->
+
+    <!-- Footer empieza aqui -->
+    <footer th:fragment="footer" class="text-center text-lg-start bg-light text-muted">
+      <!-- Section: Social media -->
+      <section
+          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+          >
+
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+              <span>También nos podes encontrar en nuestras redes:</span>
+          </div>
+          <!-- Left -->
+          
+          <!--  Right -->
+          <div>
+              <img class="socialMedia" src="../facebook.svg"  alt="" width="30"> 
+              <img class="socialMedia" src="../instagram.svg"  alt="" width="35">
+              <img class="socialMedia" src="../linkedin.svg"  alt="" width="30">
+              <img class="socialMedia" src="../youtube.svg"  alt="" width="40">
+          </div>
+          
+      </section>
+      <!-- Section: Social media  -->
+
+      <!-- Section: Links  -->
+      <section class="">
+          <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <!-- Content -->
+                      <br><br>
+                      <h6 class="text-uppercase fw-bold mb-4">
+                          <i class="fas fa-gem me-3"></i>yoursneakers.com
+                      </h6>
+                     
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      
+                      <p>
+                          <a href="#!" class="text-reset">Inicio</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Preguntas</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Tienda</a>
+                      </p>
+                      
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <p>
+                        <a href="#!" class="text-reset">Galería</a>
+                      </p>
+                      
+                      <p>
+                          <a href="#!" class="text-reset">Contactenos</a>
+                      </p>
+                      
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <!-- Links -->
+                      
+                      <p></i> San Jose, Costa Rica</p>
+                      <p>
+                          quieroinformacion@yoursneakers.com
+                      </p>
+                      <p> (506) 2345 6789</p>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+          </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          ©2022 
+          <a class="text-reset fw-bold" href="https://yoursneakers.com/">yoursneakers.com</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#locales").change(function () {
+        var selectedOption = $('#locales').val();
+        if (selectedOption != ''){
+            window.location.replace('ejemplo?lang=' + selectedOption);
+        }
+    });
+});
+</script>
+  
+</html>
